@@ -29,3 +29,9 @@ class BacktestEngine:
 
     def get_history(self) -> pd.DataFrame:
         return pd.DataFrame(self.history).set_index('timestamp')
+    
+    # TODO: Modify this to work by date rather than by last date
+    def get_net_worth(self) -> float:
+        last_date_price = self.data_feed.df.iloc[-1]['close']
+        equity = self.portfolio.cash + sum(self.portfolio.positions.values()) * last_date_price
+        return equity
