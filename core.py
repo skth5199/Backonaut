@@ -37,9 +37,10 @@ class Portfolio:
         self.trades.append(Trade(order))
 
     def net_liquidation(self, prices: dict):
+        # TODO: Add support for multiple symbols
         equity = self.cash
-        for sym, qty in self.positions.items():
-            equity += qty * prices.get(sym, 0)
+        for dt, qty in self.positions.items():
+            equity += qty * list(prices.values())[0]
         return equity
     
 class Strategy(ABC):
