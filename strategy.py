@@ -17,6 +17,7 @@ class MovingAverageCrossStrategy(Strategy):
         short_ma = pd.Series(self.prices[-self.short_window:]).mean()
         long_ma = pd.Series(self.prices[-self.long_window:]).mean()
 
+        # Todo: Remove quantity hardcoding, check for crossover signals
         if short_ma > long_ma and self.position == 0:
             self.position = 1
             return Order(symbol=data.name, quantity=100, price=data['close'], side="buy", timestamp=data.name)
