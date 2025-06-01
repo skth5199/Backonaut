@@ -15,10 +15,17 @@
 
 ```
 .
-├── core.py            # Core classes: Order, Trade, Portfolio, Strategy, DataFeed
-├── reporting.py       # Generates PDF reports with NAV chart and performance metrics
-├── main.py            # Run backtests with chosen strategy and data
-├── requirements.txt   # Required packages
+├── Backonaut/
+│   ├── __init__.py
+│   ├── core.py            # Core classes: Order, Trade, Portfolio, Strategy, DataFeed
+│   ├── data.py            # Data feed implementations (e.g., YahooFinanceDataFeed)
+│   ├── engine.py          # BacktestEngine: runs the backtest loop
+│   ├── reporting.py       # Generates PDF reports with NAV chart and performance metrics
+│   ├── strategy.py        # Example and base strategy classes
+│   └── utils.py           # Utility functions (if present)
+├── main.py                # Run backtests with chosen strategy and data
+├── requirements.txt       # Required packages
+├── README.md              # Project documentation
 ```
 
 ## 📈 Quickstart
